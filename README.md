@@ -6,4 +6,4 @@
 
 3- Podemos então criar nosso servidor - crie um arquivo chamado server.js e import http dessa forma, ja que vamos trabalhar como uma API REST - import http from "http";
 
-
+4 - Instalar a biblioteca nodemon@3.0.1 para reiniciar o projeto automaticamente, nao esquecer e adicionar o scrip no package.json
