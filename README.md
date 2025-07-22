@@ -10,3 +10,8 @@
 
 5 - Nesse projeto utilizaremos o express que é um framework de node.js pra servidores http - O comando de instalação do express é 
 npm install express@4.18.1 que é versão que vamos utilizar nesse projeto
+
+
+--comando pra config de email no git - teste
+     git config --global user.email "t.m******3@gmail.com"
+     git config --global user.name "Tiago"

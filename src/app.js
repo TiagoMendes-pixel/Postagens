@@ -68,6 +68,13 @@ app.put("/postagens/:id", (req, res) => {
     }
 
     res.status(200).json(postagens[index]);
-})
+});
+
+app.delete("/postagens/:id", (req, res) => {
+    const index = buscaPostagem(req.params.id);
+    postagens.splice(index, 1);
+    res.status(200).send("Postagem removida com sucesso!!!")
+
+});
 
 export default app;
