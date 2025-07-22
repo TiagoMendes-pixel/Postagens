@@ -15,3 +15,14 @@ npm install express@4.18.1 que é versão que vamos utilizar nesse projeto
 --comando pra config de email no git - teste
      git config --global user.email "t.m******3@gmail.com"
      git config --global user.name "Tiago"
+
+
+     --secrets para o banco de dados mongo
+     Username -  tiagoletras123
+     password -  INVRN13ZYXVE7amG
+
+
+     mongodb+srv://tiagoletras123:INVRN13ZYXVE7amG@fiap.vut93op.mongodb.net/?retryWrites=true&w=majority&appName=Fiap
+
+
+     6- Instalação do mongoose para conexão com banco de dados mongoDB na nuvem
