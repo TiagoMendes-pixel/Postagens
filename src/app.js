@@ -1,5 +1,18 @@
 import express from "express";
+import conectaNaDatabase from "./config/dbConnect.js";
+import postagem from "./models/Postagem.js";
 
+//Conectando na base de dados
+const conexao = await conectaNaDatabase();
+
+//Criando o evendo de conexão
+conexao.on("error", (error) => {
+    console.error("erro de conexão", error);
+});
+
+conexao.once("open", () => {
+    console.log("Connected successfully :)")
+})
 
 //Criando uma instancia do express com todas as suas funçoes dentro da variável app
 const app = express();
@@ -7,36 +20,13 @@ const app = express();
 //Criação do middleware com o express
 app.use(express.json());
 
-//Criando um array de posts patra simular um bd de posts
-
-const postagens = [
-
-    {
-        id: 1,
-        titulo: "o Surgimento da bomba nuclear",
-        descricao: "A bomba atômica surgiu durante a Segunda Guerra Mundial, no âmbito do Projeto Manhattan, um esforço secreto dos Estados Unidos para desenvolver armas nucleares antes da Alemanha nazista.",
-    },
-    {
-        id: 2,
-        titulo: " O que é uma inteligência artificial?",
-        descricao: "A inteligência artificial (IA) é um conjunto de tecnologias que permitem aos computadores executar uma variedade de funções avançadas, incluindo a capacidade de ver, entender e traduzir idiomas falados e escritos, analisar dados, fazer recomendações e muito mais."
-    }
-
-]
-
-//funcao que busca a postagem por id e traz postagem já convertida pra number
-function buscaPostagem(id) {
-    return postagens.findIndex(postagem => {
-        return postagem.id === Number(id);
-    });
-}
-
 app.get("/", (req, res) => {
     res.status(200).send("Blog de postagens!!!")
 })
 
-app.get("/postagens", (req, res) => {
-    res.status(200).json(postagens);
+app.get("/postagens", async (req, res) => {
+    const listaPostagens = await postagem.find({})
+    res.status(200).json(listaPostagens);
 });
 
 app.get("/postagens/:id", (req, res) => {
