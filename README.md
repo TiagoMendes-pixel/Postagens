@@ -26,3 +26,6 @@ npm install express@4.18.1 que é versão que vamos utilizar nesse projeto
 
 
      6- Instalação do mongoose para conexão com banco de dados mongoDB na nuvem
+
+     7 - Criando o diretorio de controller dentro dp projeto para organização das camadas
+     obs: Revisar o conceito de asyns e sync nos métodos 
