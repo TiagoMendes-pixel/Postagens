@@ -24,10 +24,10 @@ app.get("/", (req, res) => {
     res.status(200).send("Blog de postagens!!!")
 })
 
-app.get("/postagens", async (req, res) => {
-    const listaPostagens = await postagem.find({})
-    res.status(200).json(listaPostagens);
-});
+// app.get("/postagens", async (req, res) => {
+//     const listaPostagens = await postagem.find({})
+//     res.status(200).json(listaPostagens);
+// });
 
 app.get("/postagens/:id", (req, res) => {
     const index = buscaPostagem(req.params.id);
