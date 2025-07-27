@@ -29,3 +29,5 @@ npm install express@4.18.1 que é versão que vamos utilizar nesse projeto
 
      7 - Criando o diretorio de controller dentro dp projeto para organização das camadas
      obs: Revisar o conceito de asyns e sync nos métodos 
+
+     8- Criando autenticação para alunos e professores com jwt - (json web token) - 
